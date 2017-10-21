@@ -2,11 +2,11 @@ version: '3'
 
 services:
   php:
-    build: docker/php #php:7.1-fpm-alpine
+    build: docker/php
     volumes: 
       - ./src:/var/www/html
   nginx:
-    build: docker/nginx #nginx:latest
+    build: docker/nginx
     ports:
       - "80:80"
     links:
@@ -16,4 +16,4 @@ services:
       - ./logs/error.log:/var/log/nginx/error.log
       - ./logs/access.log:/var/log/nginx/access.log
       - ./src:/var/www/html
-    command: [nginx-debug, '-g', 'daemon off;']
+    command: ["nginx", "-g", "daemon off;"]
