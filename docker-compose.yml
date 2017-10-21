@@ -6,7 +6,7 @@ services:
     volumes: 
       - ./src:/var/www/html
   nginx:
-    image: nginx:latest
+    build: docker/nginx #nginx:latest
     ports:
       - "80:80"
     links:
