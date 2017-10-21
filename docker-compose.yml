@@ -2,7 +2,7 @@ version: '3'
 
 services:
   php:
-    image: php:7.1-fpm-alpine
+    build: docker/php #php:7.1-fpm-alpine
     volumes: 
       - ./src:/var/www/html
   nginx:
