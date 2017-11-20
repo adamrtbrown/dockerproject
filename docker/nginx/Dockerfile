@@ -14,6 +14,9 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log \
 RUN apt-get update && apt-get install -y software-properties-common && add-apt-repository -y ppa:alex-p/tesseract-ocr
 RUN apt-get update && apt-get install -y tesseract-ocr 
 
+RUN apt-get update && apt-get install -y php-cli php7.0-curl php7.0-gd php7.0-json php7.0-xml php7.0-mcrypt php7.0-zip 
+RUN apt-get update && apt-get install -y git
+
 EXPOSE 80
 
 STOPSIGNAL SIGTERM

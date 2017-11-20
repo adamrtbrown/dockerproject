@@ -5,6 +5,7 @@ services:
     build: docker/php
     volumes: 
       - ./src:/var/www/html
+    container_name: dev-php
   nginx:
     build: docker/nginx
     ports:
@@ -16,4 +17,5 @@ services:
       - ./logs/error.log:/var/log/nginx/error.log
       - ./logs/access.log:/var/log/nginx/access.log
       - ./src:/var/www/html
+    container_name: dev-nginx
     command: ["nginx", "-g", "daemon off;"]
